@@ -946,6 +946,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandRay: {fileID: 726864901}
   leftHandRay: {fileID: 1613360314}
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHandMesh: {fileID: 1561416682}
+  leftHandMesh: {fileID: 1451230265}
 --- !u!1 &676329153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5923066369038801663, guid: aa9a9fd92ee0c6046b792cf458a9a999, type: 3}
@@ -3434,6 +3438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+--- !u!137 &1451230265 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 109434732392105323, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  m_PrefabInstance: {fileID: 1451230264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513420120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,6 +3739,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 702d3126bc63a17498e6d4241e92a208, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!137 &1561416682 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_PrefabInstance: {fileID: 1561416681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1565929998
 GameObject:
   m_ObjectHideFlags: 0
