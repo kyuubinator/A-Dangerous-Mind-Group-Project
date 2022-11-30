@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         //door.SetActive(false);
+
         key.transform.SetParent(door.transform, true);
 
     }
