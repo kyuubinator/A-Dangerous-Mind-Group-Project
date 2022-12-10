@@ -1,1 +1,1 @@
-Horror Group Project
+Horror VR Group Project
