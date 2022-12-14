@@ -5,6 +5,7 @@
 [Bb]uild/
 [Ll]ibrary/
 [Ll]ocal[Cc]ache/
+[Ll]ogs/
 [Oo]bj/
 [Tt]emp/
 [Uu]nityGenerated/
@@ -16,6 +17,7 @@ sysinfo.txt
 ###
 # VS/MD solution and project files
 ###
+.vs/
 [Ee]xportedObj/
 *.booproj
 *.csproj
@@ -26,6 +28,7 @@ sysinfo.txt
 *.user
 *.userprefs
 *.pidb
+*.log
 .DS_Store
 
 ###
