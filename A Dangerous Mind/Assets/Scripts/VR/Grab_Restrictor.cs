@@ -8,41 +8,32 @@ public class Grab_Restrictor : MonoBehaviour
     [SerializeField] private GameObject leftHandRay;
     [SerializeField] private GameObject rightHand;
     [SerializeField] private GameObject leftHand;
-    [SerializeField] private SkinnedMeshRenderer rightHandMesh;
-    [SerializeField] private SkinnedMeshRenderer leftHandMesh;
+
+
     public void RightHandGrabON()
     {
-        Color color = rightHandMesh.material.color;
-        color.a = 0;
-        rightHandMesh.material.color = color;
+        rightHand.SetActive(false);
 
         rightHandRay.SetActive(false);
-        
     }
 
     public void LeftHandGrabOn()
     {
-        Color color = leftHandMesh.material.color;
-        color.a = 0;
-        rightHandMesh.material.color = color;
+        leftHand.SetActive(false);
 
         leftHandRay.SetActive(false);
     }
 
     public void RightHandGrabOff()
     {
-        Color color = rightHandMesh.material.color;
-        color.a = 1;
-        rightHandMesh.material.color = color;
+        rightHand.SetActive(true);
 
         rightHandRay.SetActive(true);
     }
 
     public void LeftHandGrabOff()
     {
-        Color color = leftHandMesh.material.color;
-        color.a = 1;
-        rightHandMesh.material.color = color;
+        leftHand.SetActive(true);
 
         leftHandRay.SetActive(true);
     }

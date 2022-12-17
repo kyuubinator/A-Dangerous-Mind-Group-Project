@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject door;
-    [SerializeField] private GameObject key;
-    [SerializeField] private Animator animator;
 
-
-    public void UnlockDoor()
+    public void KinematicOn(Rigidbody value)
     {
-        animator.enabled = true;
-        animator.SetTrigger("Unlock");
-        StartCoroutine(DoorUnlock());
+        value.isKinematic = true;
     }
-    
-    IEnumerator DoorUnlock()
+
+    public void KinematicOff(Rigidbody value)
     {
-        yield return new WaitForSeconds(1.5f);
-        //door.SetActive(false);
-
-        key.transform.SetParent(door.transform, true);
-
+        value.isKinematic = false;
     }
 }
