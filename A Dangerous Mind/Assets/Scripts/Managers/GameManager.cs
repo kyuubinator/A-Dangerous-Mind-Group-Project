@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator animator;
 
 
-    public void BeGoneThot()
+    public void UnlockDoor()
     {
         animator.enabled = true;
         animator.SetTrigger("Unlock");
