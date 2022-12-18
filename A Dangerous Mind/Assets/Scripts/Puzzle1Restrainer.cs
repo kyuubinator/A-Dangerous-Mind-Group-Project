@@ -9,9 +9,12 @@ public class Puzzle1Restrainer : MonoBehaviour
     private void Update()
     {
         float time =+ Time.deltaTime;
-        if (time >= 0.2f)
+        if (time >= 0.1f)
         {
-            playerHand.SetActive(false);
+            if (playerHand.activeSelf)
+            {
+                playerHand.SetActive(false);
+            }
             time = 0;
         }
     }
@@ -26,6 +29,9 @@ public class Puzzle1Restrainer : MonoBehaviour
 
     private void DestroyRestrains()
     {
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+
         Destroy(fakeHand);
         for (int i = 0; i < restrains.Length; i++)
         {
