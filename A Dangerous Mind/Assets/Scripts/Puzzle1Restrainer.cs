@@ -5,6 +5,7 @@ public class Puzzle1Restrainer : MonoBehaviour
     [SerializeField] private GameObject fakeHand;
     [SerializeField] private GameObject playerHand;
     [SerializeField] private GameObject[] restrains;
+    [SerializeField] private GameObject key;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class Puzzle1Restrainer : MonoBehaviour
         if (other.gameObject.tag == "Key")
         {
             DestroyRestrains();
+            Destroy(other.gameObject);
         }
     }
 
@@ -31,7 +33,7 @@ public class Puzzle1Restrainer : MonoBehaviour
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-
+        key.SetActive(true);
         Destroy(fakeHand);
         for (int i = 0; i < restrains.Length; i++)
         {
