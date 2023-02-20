@@ -21,6 +21,7 @@ TagManager:
   - Chain
   - OnlyChainInteract
   - PlayerNoCollide
+  - Decal
   - FakeHand
   - Hand Restrainer
   - 
