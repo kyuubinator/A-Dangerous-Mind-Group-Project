@@ -8,6 +8,7 @@ TagManager:
   - Left Hand
   - ChainLink
   - Key
+  - DecalHit
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,6 @@ TagManager:
   - Decal
   - FakeHand
   - Hand Restrainer
-  - 
   - 
   - 
   - 
