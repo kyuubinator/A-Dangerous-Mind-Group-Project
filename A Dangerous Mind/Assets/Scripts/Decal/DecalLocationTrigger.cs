@@ -8,20 +8,20 @@ public class DecalLocationTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("DecalHit"))
         {
             bool decal = true;
-            other.GetComponentInChildren<DecalRaycast>().CanCast = decal;
+            other.GetComponent<DecalRaycast>().CanCast = decal;
             decalCheck.InPosition(decal, this);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("DecalHit"))
         {
             bool decal = false;
-            other.GetComponentInChildren<DecalRaycast>().CanCast = decal;
+            other.GetComponent<DecalRaycast>().CanCast = decal;
             decalCheck.InPosition(decal, this);
         }
     }
