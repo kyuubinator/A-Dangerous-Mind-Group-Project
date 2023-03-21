@@ -9,6 +9,7 @@ TagManager:
   - ChainLink
   - Key
   - DecalHit
+  - Crowbar
   layers:
   - Default
   - TransparentFX
