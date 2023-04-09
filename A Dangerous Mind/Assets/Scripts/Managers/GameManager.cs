@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private XRGrabInteractable[] clock;
     [SerializeField] private Animator[] animDoors;    // 0 Bedroom // 1 Storage // 2 LivingRoom
-
+    [SerializeField] private AudioManager audioManager;
     public void KinematicOn(Rigidbody value)
     {
         value.isKinematic = true;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         //Key Sound
         yield return new WaitForSeconds(1);
         animDoors[0].SetTrigger("Unlock");
-        //Door Open sound
+        audioManager.DoorSoundEffects[0].Play();
     }
 
     public void UnlockStorage()
@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         animDoors[1].SetTrigger("Unlock");
+        audioManager.DoorSoundEffects[1].Play();
         //Door Open sound
     }
 
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         animDoors[2].SetTrigger("Unlock");
+        audioManager.DoorSoundEffects[2].Play();
         //Door Open sound
     }
 
@@ -82,4 +84,19 @@ public class GameManager : MonoBehaviour
             //Door Open sound ?
         }
     }
+
+    #region Audio
+
+    public void PlayDoorSound(int value)
+    {
+        if (value >= audioManager.DoorSoundEffects.Length)
+            audioManager.DoorSoundEffects[value].Play();
+    }
+
+    public void PlaySoundEffect(int value)
+    {
+        if (value >= audioManager.SoundEffects.Length)
+            audioManager.SoundEffects[value].Play();
+    }
+    #endregion
 }
