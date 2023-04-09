@@ -17,7 +17,6 @@ public class CrowBarFridge : MonoBehaviour
     void Start()
     {
         placeCrowbar = GetComponent<BoxCollider>();
-        fridgeAnimator = GetComponent<Animator>();
         inicialRotation = crowbar.transform.eulerAngles;
     }
 
