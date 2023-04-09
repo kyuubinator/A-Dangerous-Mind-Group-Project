@@ -8,9 +8,9 @@ public class CrowBarFridge : MonoBehaviour
 
     [SerializeField] private BoxCollider placeCrowbar;
     [SerializeField] private GameObject crowbar;
-    private Vector3 inicialRotation;
     [SerializeField] private Animator fridgeAnimator;
-
+    [Header("Crowbar in place")]
+    private Vector3 inicialRotation;
     [SerializeField] private bool inPlace;
     [SerializeField] private float rotationC;
     // Start is called before the first frame update

@@ -10,6 +10,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private HoursPointer hourPointer;
     [SerializeField] private Animator anim;
     [SerializeField] private XRGrabInteractable[] interactable;
+    [SerializeField] private GameManager gameManager;
     [Header("values")]
     [SerializeField] private int hours;
 
@@ -43,6 +44,7 @@ public class Clock : MonoBehaviour
             {
                 interactable[i].enabled = false;
             }
+            gameManager.UnlockStorage();
         }
     }
 }

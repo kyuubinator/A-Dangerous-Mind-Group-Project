@@ -5,7 +5,7 @@ using UnityEngine;
 public class BedroomDoorKeyhole : MonoBehaviour
 {
     [SerializeField] private GameObject key;
-    [SerializeField] private Animator anim;
+    [SerializeField] private GameManager gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +13,7 @@ public class BedroomDoorKeyhole : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             key.gameObject.SetActive(true);
-            anim.SetTrigger("Unlock");
+            gameManager.UnlockBedroom();
         }
     }
 }
