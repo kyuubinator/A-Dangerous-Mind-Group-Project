@@ -22,7 +22,7 @@ public class Puzzle1Restrainer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Key")
+        if (other.gameObject.CompareTag("Key"))
         {
             DestroyRestrains();
             Destroy(other.gameObject);
