@@ -10,6 +10,7 @@ public class BookShelfPuzzle : MonoBehaviour
     [SerializeField] private bool complete;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject decal;
+    [SerializeField] private GameManager gameManager;
 
 
     private void Start()
@@ -49,6 +50,7 @@ public class BookShelfPuzzle : MonoBehaviour
             complete = true;
             anim.enabled = true;
             decal.SetActive(true);
+            gameManager.StartFinalSequence();
         }
     }
 
