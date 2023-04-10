@@ -9,10 +9,13 @@ public class CrowBarFridge : MonoBehaviour
     [SerializeField] private BoxCollider placeCrowbar;
     [SerializeField] private GameObject crowbar;
     [SerializeField] private Animator fridgeAnimator;
+    [SerializeField] private GameManager gameManager;
     [Header("Crowbar in place")]
     private Vector3 inicialRotation;
     [SerializeField] private bool inPlace;
     [SerializeField] private float rotationC;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,7 @@ public class CrowBarFridge : MonoBehaviour
                 Debug.Log("Hello");
                 inPlace = false;
                 fridgeAnimator.SetTrigger("Open");
+                gameManager.PlaySoundEffect(1);
                 StartCoroutine(Opened());
             }
         }
@@ -50,8 +54,8 @@ public class CrowBarFridge : MonoBehaviour
             if (other.gameObject.CompareTag("Crowbar"))
             {
                 Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-                if (Mathf.Abs(rb.velocity.y) >= 1f)   //Tests
-                //if (rb.velocity.z <= -1f)   //Actual if for Swing Motion
+                //if (Mathf.Abs(rb.velocity.y) >= 1f)   //Tests
+                if (Mathf.Abs(rb.velocity.z) >= 1f)   //Actual if for Swing Motion
                 {
                     other.gameObject.SetActive(false);
                     crowbar.SetActive(true);

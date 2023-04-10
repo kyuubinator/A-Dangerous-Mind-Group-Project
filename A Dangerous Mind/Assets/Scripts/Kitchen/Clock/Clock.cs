@@ -37,7 +37,7 @@ public class Clock : MonoBehaviour
     {
         if (hours == 2) 
         {
-            complete = true;
+            anim.SetTrigger("Unlock");
             minPointer.enabled= false;
             hourPointer.enabled= false;
             for (int i = 0; i < interactable.Length; i++)
