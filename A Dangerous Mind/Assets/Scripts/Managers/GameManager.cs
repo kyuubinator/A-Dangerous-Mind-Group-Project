@@ -32,9 +32,8 @@ public class GameManager : MonoBehaviour
         value.isKinematic = false;
     }
 
-    public void UnlockClockPuzzle(Rigidbody value)
+    public void UnlockClockPuzzle()
     {
-        value.isKinematic = false;
         for (int i = 0; i < clock.Length; i++)
         {
             clock[i].enabled = true;
@@ -80,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void CloseStorage()
     {
-        animDoors[1].SetTrigger("Unlock");
+        animDoors[1].SetTrigger("Close");
         audioManager.DoorSoundEffects[1].Play();
         // door Close Sound
         lights[2].SetActive(false);
@@ -93,6 +92,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator UnlockLivingRoomDoor()
     {
+        lights[3].SetActive(true);
         yield return new WaitForSeconds(2);
         animDoors[2].SetTrigger("Unlock");
         audioManager.DoorSoundEffects[2].Play();
@@ -128,6 +128,8 @@ public class GameManager : MonoBehaviour
     IEnumerator StartFinalSeq()
     {
         yield return new WaitForSeconds(2);
+        finalSeqTriggers.SetActive(true);
+        fakeDoor.SetActive(false);
         Entity.SetActive(true);
         lights[4].SetActive(true);
         audioManager.RandomSoundEffects[0].Play();
