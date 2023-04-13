@@ -13,14 +13,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] lights;
     [SerializeField] private Animator finalDoor;
     [SerializeField] private GameObject fakeDoor;
-    [SerializeField] private GameObject Entity;
-    [SerializeField] private GameObject Entity2;
+    [SerializeField] private GameObject entity;
+    [SerializeField] private GameObject entity2;
+    [SerializeField] private Renderer entity2Renderer;
     [SerializeField] private Animator animEntity2;
 
     [SerializeField] private GameObject finalSeqTriggers;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject endLocation;
+    [SerializeField] private bool canSeeCreature;
 
+    private void Update()
+    {
+        LookAtCreature();
+    }
 
     public void KinematicOn(Rigidbody value)
     {
@@ -130,7 +136,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         finalSeqTriggers.SetActive(true);
         fakeDoor.SetActive(false);
-        Entity.SetActive(true);
+        entity.SetActive(true);
         lights[4].SetActive(true);
         audioManager.RandomSoundEffects[0].Play();
     }
@@ -161,10 +167,32 @@ public class GameManager : MonoBehaviour
     IEnumerator FinalScene()
     {
         finalDoor.enabled = true;
-        yield return new WaitForSeconds(1);
-        Entity2.SetActive(true);
-        animEntity2.SetTrigger("PrepRun");
         yield return new WaitForSeconds(2);
+        lights[4].SetActive(false);
+        yield return new WaitForSeconds(1);
+        entity2.SetActive(true);
+        animEntity2.SetTrigger("PrepRun");
+        canSeeCreature = true;
+        //yield return new WaitForSeconds(2);
+        //animEntity2.SetTrigger("StartRunning");
+        //audioManager.EntitySounds[0].Play();
+        //yield return new WaitForSeconds(0.7f);
+        //player.transform.position = new Vector3(endLocation.transform.position.x, player.transform.position.y, endLocation.transform.position.z);
+    }
+
+    private void LookAtCreature()
+    {
+        if (canSeeCreature)
+        {
+            if (entity2Renderer.isVisible == true)
+                StartCoroutine(SeenCreature());
+        }   
+    }
+
+    IEnumerator SeenCreature()
+    {
+        canSeeCreature = false;
+        yield return new WaitForSeconds(1);
         animEntity2.SetTrigger("StartRunning");
         audioManager.EntitySounds[0].Play();
         yield return new WaitForSeconds(0.7f);
