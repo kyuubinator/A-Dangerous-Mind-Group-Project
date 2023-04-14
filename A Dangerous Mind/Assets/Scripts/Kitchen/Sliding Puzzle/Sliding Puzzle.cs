@@ -4,27 +4,10 @@ using UnityEngine;
 
 public class SlidingPuzzle : MonoBehaviour
 {
-    [SerializeField] private GameObject[] slidingPieces;
 
-    [SerializeField] private GameObject[] piecesPos;
+    [SerializeField] private SlidingPiece[] pieces;
+    [SerializeField] private Transform[] destinations;
 
-    [SerializeField] private GameObject[] puzzleSolution;
-    [SerializeField] private GameObject[] possibleMove;
-
-
-    public void AddPiece(GameObject piece)
-    {
-        
-    }
-
-    private void TryToMove(GameObject piece)
-    {
-        for (int i = 0; i < possibleMove.Length; i++)
-        {
-            if (possibleMove[i] == piece)
-            {
-
-            }
-        }
-    }
+    [SerializeField] private GameObject[] sdsdsd;
+    
 }
