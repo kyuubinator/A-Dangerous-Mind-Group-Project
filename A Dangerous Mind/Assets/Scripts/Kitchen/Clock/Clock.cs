@@ -38,6 +38,7 @@ public class Clock : MonoBehaviour
         if (hours == 2) 
         {
             anim.SetTrigger("Unlock");
+            gameManager.PlayDoorSound(4);
             minPointer.enabled= false;
             hourPointer.enabled= false;
             for (int i = 0; i < interactable.Length; i++)

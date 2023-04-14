@@ -54,8 +54,8 @@ public class CrowBarFridge : MonoBehaviour
             if (other.gameObject.CompareTag("Crowbar"))
             {
                 Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-                //if (Mathf.Abs(rb.velocity.y) >= 1f)   //Tests
-                if (Mathf.Abs(rb.velocity.z) >= 1f)   //Actual if for Swing Motion
+                if (Mathf.Abs(rb.velocity.y) >= 1f)   //Tests
+                //if (Mathf.Abs(rb.velocity.z) >= 1f)   //Actual if for Swing Motion
                 {
                     other.gameObject.SetActive(false);
                     crowbar.SetActive(true);

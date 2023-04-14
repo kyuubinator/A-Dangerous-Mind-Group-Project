@@ -169,6 +169,8 @@ public class GameManager : MonoBehaviour
         finalDoor.enabled = true;
         yield return new WaitForSeconds(2);
         lights[4].SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        audioManager.EntitySounds[1].Play();
         yield return new WaitForSeconds(1);
         entity2.SetActive(true);
         animEntity2.SetTrigger("PrepRun");
@@ -205,13 +207,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayDoorSound(int value)
     {
-        if (value >= audioManager.DoorSoundEffects.Length)
+        if (value < audioManager.DoorSoundEffects.Length)
             audioManager.DoorSoundEffects[value].Play();
     }
 
     public void PlaySoundEffect(int value)
     {
-        if (value >= audioManager.SoundEffects.Length)
+        if (value < audioManager.SoundEffects.Length)
             audioManager.SoundEffects[value].Play();
     }
     #endregion
