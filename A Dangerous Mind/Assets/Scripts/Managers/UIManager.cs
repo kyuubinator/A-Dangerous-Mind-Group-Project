@@ -22,7 +22,10 @@ public class UIManager : MonoBehaviour
         {
             _isPaused = !_isPaused;
         }
-        _menu.SetActive(_isPaused);
+        if (_menu != null)
+        {
+            _menu.SetActive(_isPaused);
+        }
         OnPauseMenu();
     }
 
@@ -35,7 +38,7 @@ public class UIManager : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-            _menu.SetActive(_settings);
+            _settings.SetActive(false);
         }
     }
 
