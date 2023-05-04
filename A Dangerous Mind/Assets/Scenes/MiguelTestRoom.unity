@@ -13740,6 +13740,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 326021331}
+  - {fileID: 1134644179}
   m_Father: {fileID: 1360009606}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25160,7 +25161,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32832
+    m_Bits: 34880
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -25843,13 +25844,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134644178}
-  m_LocalRotation: {x: 0.50000006, y: -0.49999997, z: -0.50000006, w: 0.49999997}
-  m_LocalPosition: {x: -0.00276, y: -0.0003600028, z: 0.00235}
-  m_LocalScale: {x: 0.010000003, y: 0.010000001, z: 0.010000001}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2.0996246, y: -0.33099997, z: 0.19199991}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 326021331}
-  m_RootOrder: 9
+  m_Father: {fileID: 665750769}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1134644180
 MonoBehaviour:
@@ -34305,7 +34306,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32832
+    m_Bits: 34880
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -40977,7 +40978,7 @@ GameObject:
   - component: {fileID: 1879530919}
   - component: {fileID: 1879530918}
   - component: {fileID: 1879530922}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: ClockClue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
