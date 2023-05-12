@@ -5,7 +5,6 @@ using UnityEngine;
 public class Fridge : MonoBehaviour
 {
     [SerializeField] private GameObject fridgeKey;
-    private bool isUnlocked;
     private Rigidbody rb;
 
     private void Start()
@@ -18,7 +17,6 @@ public class Fridge : MonoBehaviour
         if (other.gameObject.CompareTag("FridgeKey"))
         {
             Destroy(other.gameObject);
-            isUnlocked = true;
             fridgeKey.SetActive(true);
             rb.isKinematic = false;
         }
