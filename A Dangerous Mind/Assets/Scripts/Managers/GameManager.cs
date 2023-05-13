@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject endLocation;
     [SerializeField] private bool canSeeCreature;
 
+    private bool crowbarVar;
+
     private void Update()
     {
         LookAtCreature();
@@ -123,6 +125,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PickUpCrowbar()
+    {
+        if (!crowbarVar)
+        {
+            CloseBedroom();
+            crowbarVar = true;
+        }
+    }
+
+    public void CompleteSlidingPuzzle()
+    {
+        lights[1].SetActive(false);
+    }
 
     #region EndSequence
 
@@ -155,7 +170,7 @@ public class GameManager : MonoBehaviour
     
     private void StepTrigger1()
     {
-        CloseBedroom();
+        //CloseBedroom();
         CloseStorage();
     }
 
