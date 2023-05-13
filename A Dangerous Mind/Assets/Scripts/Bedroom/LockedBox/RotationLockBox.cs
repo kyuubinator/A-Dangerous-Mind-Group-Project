@@ -6,7 +6,7 @@ public class RotationLockBox : MonoBehaviour
 {
     [SerializeField] private int locksSolved;
     [SerializeField] private int lockNumber;
-    [SerializeField] private GameObject lid;
+    [SerializeField] private Animator lid;
 
     public void SolveLock()
     {
@@ -23,7 +23,7 @@ public class RotationLockBox : MonoBehaviour
     {
         if (locksSolved == lockNumber)
         {
-            Destroy(lid);
+            lid.enabled = true;
             Debug.Log("case Opened");
             Destroy(this);
         }
