@@ -26,8 +26,12 @@ public class CandleCheck : MonoBehaviour
         {
             other.transform.position = deliveryPoint.position;
             other.transform.rotation = deliveryPoint.rotation;
-            this.gameObject.SetActive(false);
-            timer = 0;
+        }
+        Book book = other.GetComponent<Book>();
+        if (book)
+        {
+            other.transform.position = deliveryPoint.position;
+            other.transform.rotation = deliveryPoint.rotation;
         }
     }
 }
