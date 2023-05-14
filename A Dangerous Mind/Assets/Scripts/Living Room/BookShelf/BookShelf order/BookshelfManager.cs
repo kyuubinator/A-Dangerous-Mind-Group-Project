@@ -5,7 +5,6 @@ using UnityEngine;
 public class BookshelfManager : MonoBehaviour
 {
     [SerializeField] private bool[] checks;
-    [SerializeField] private GameObject asd;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject decal;
     [SerializeField] private GameManager gameManager;
@@ -38,7 +37,6 @@ public class BookshelfManager : MonoBehaviour
     
     private void Complete()
     {
-        asd.SetActive(true);
         anim.enabled = true;
         decal.SetActive(true);
         gameManager.StartFinalSequence();
