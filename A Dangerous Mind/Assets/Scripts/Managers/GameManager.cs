@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject endLocation;
     [SerializeField] private bool canSeeCreature;
+    [SerializeField] private GameObject[] candleChecks;
 
     private bool crowbarVar;
 
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
         animDoors[0].SetTrigger("Close");
         audioManager.DoorSoundEffects[3].Play();
         //Door Close Sound
+        candleChecks[0].SetActive(true);
     }
 
     public void UnlockStorage()
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour
         audioManager.DoorSoundEffects[1].Play();
         // door Close Sound
         lights[2].SetActive(false);
+        candleChecks[1].SetActive(true);
     }
 
     public void UnlockLivingRoom()

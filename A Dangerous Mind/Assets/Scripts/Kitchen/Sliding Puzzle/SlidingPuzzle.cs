@@ -13,6 +13,8 @@ public class SlidingPuzzle : MonoBehaviour
     [SerializeField] private Animator chestAnim;
     [SerializeField] private XRGrabInteractable reward;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject piecesObj;
+    [SerializeField] private GameObject piecesSolved;
 
     public void RecievePiece(int piece,bool var)
     {
@@ -41,8 +43,9 @@ public class SlidingPuzzle : MonoBehaviour
     {
         for (int i = 0; i < pieces.Length; i++)
         {
-            pieces[i].enabled = false;
+            pieces[i].gameObject.SetActive(false);
         }
+        piecesSolved.SetActive(true);
         chestAnim.SetTrigger("Unlock");
         reward.enabled = true;
         gameManager.CompleteSlidingPuzzle();

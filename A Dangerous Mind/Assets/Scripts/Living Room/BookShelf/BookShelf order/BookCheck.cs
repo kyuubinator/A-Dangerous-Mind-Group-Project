@@ -7,6 +7,7 @@ public class BookCheck : MonoBehaviour
     [SerializeField] private BookshelfManager bookshelfManager;
     [SerializeField] private int bookId;
     [SerializeField] private int socketId;
+    private bool hasBook;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,11 @@ public class BookCheck : MonoBehaviour
             bookId = book.Id;
             if (bookId == socketId)
             {
-                OnBookIn(); 
+                if (!hasBook)
+                {
+                    OnBookIn();
+                    hasBook = true;
+                }
             }
         }
     }
@@ -27,7 +32,11 @@ public class BookCheck : MonoBehaviour
         if (book != null)
         {
             bookId = book.Id;
-            OnBookOut();
+            if (hasBook)
+            {
+                OnBookOut();
+                hasBook = false;
+            }
         }
     }
     private void OnBookIn()
