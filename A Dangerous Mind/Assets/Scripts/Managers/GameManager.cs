@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] candleChecks;
 
     private bool crowbarVar;
+    private bool isLivingRoomUnlocked;
 
     private void Update()
     {
@@ -98,12 +99,16 @@ public class GameManager : MonoBehaviour
 
     public void UnlockLivingRoom()
     {
-        StartCoroutine(UnlockLivingRoomDoor());
+        if (!isLivingRoomUnlocked)
+        {
+            StartCoroutine(UnlockLivingRoomDoor());
+        }
     }
 
     IEnumerator UnlockLivingRoomDoor()
     {
         lights[3].SetActive(true);
+        isLivingRoomUnlocked = true;
         yield return new WaitForSeconds(2);
         animDoors[2].SetTrigger("Unlock");
         audioManager.DoorSoundEffects[2].Play();

@@ -9,7 +9,8 @@ public class BookshelfManager : MonoBehaviour
     [SerializeField] private GameObject decal;
     [SerializeField] private GameManager gameManager;
     [Header("Books")]
-    [SerializeField] private GameObject books;
+    [SerializeField] private GameObject[] books;
+    [SerializeField] private GameObject booksCheats;
     [SerializeField] private GameObject fakeBooks;
 
     public void BookCheck(int var,bool check)
@@ -40,7 +41,11 @@ public class BookshelfManager : MonoBehaviour
         anim.enabled = true;
         decal.SetActive(true);
         gameManager.StartFinalSequence();
-        books.SetActive(false);
+        booksCheats.SetActive(false);
         fakeBooks.SetActive(true);
+        for (int i = 0; i < books.Length; i++)
+        {
+            books[i].SetActive(false);
+        }
     }
 }
