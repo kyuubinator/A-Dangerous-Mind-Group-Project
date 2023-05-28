@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     private bool crowbarVar;
     private bool isLivingRoomUnlocked;
 
+    [SerializeField] private GameObject entityCorridor;
+
     private void Update()
     {
         LookAtCreature();
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
     {
         lights[3].SetActive(true);
         isLivingRoomUnlocked = true;
+        entityCorridor.SetActive(true);
         yield return new WaitForSeconds(2);
         animDoors[2].SetTrigger("Unlock");
         audioManager.DoorSoundEffects[2].Play();
